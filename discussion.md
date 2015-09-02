@@ -236,7 +236,7 @@ Protocol changes proposed:
 7. Changing the 1MB limit is accomplished in a manner similar to BIP 34, a one-way lock-in upgrade with a 12,000 block (3 month) threshold by 90% of the blocks.
 8. Limit increase or decrease may not exceed 2x in any one step.
 9. Limit may not decrease below 1MB.
-10. Miners vote by encoding ‘BV’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/BV8000000/” to vote for 8M. Votes are evaluated by dropping bottom 20% and top 20%, and then the most common floor (minimum) is chosen.
+10. Miners vote by encoding ‘BV’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/BV8000000/” to vote for 8M. Votes are evaluated by dropping bottom 20% and top 20%, and then, for a potential increase in block size, the most common floor (minimum) is chosen, and for a potential decrease in block size, the most common ceiling (maximum) is chosen.
 
 This creates a framework whereby the network may increase the block size
 by consensus, a lower and less politically risky hurdle than hard fork.
