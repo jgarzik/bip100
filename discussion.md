@@ -1,6 +1,8 @@
 # Making Decentralized Economic Policy
+
 BIP 100 - Theory and Discussion, v0.8.1 - draft
-Jeff Garzik <jgarzik@gmail.com>
+
+Jeff Garzik &lt;jgarzik@gmail.com&gt;
 
 
 ## Bitcoin block size, a change in economic policy
@@ -253,7 +255,7 @@ This BIP accomplishes several goals:
 * Get hard fork risk out of the way early.
 * KISS solution, in terms of code changes.
 * Upgrade path, yet constrained until problem & solution better understood.
-*
+
 This introduces friction into the block size increase process - making
 it changeable, yet giving participants in the system sufficient time to
 observe system behavior and change course.  Ultimately moving towards a
@@ -282,9 +284,9 @@ arguments of opponents to a ludicrous degree.
 In toto, this is a major change to bitcoin.  Changing a $3B economic
 system - even if to keep it alive and growing and healthy - deserves
 more in-depth attention and research than has been given to date.  The
-1MB limit is a relic from an earlier time, always intended to be removed
-- yet paradoxically it forms the core of our economics today and cannot
-  be changed lightly or without consequence.
+1MB limit is a relic from an earlier time, always intended to be removed -
+yet paradoxically it forms the core of our economics today and cannot
+be changed lightly or without consequence.
 
 
 ## Discussion: Accepting engineering reality
@@ -356,21 +358,17 @@ limit well above today’s traffic levels.  There is no competition for
 space at all.  Fees will be zero (assuming for ex. no anti-spam
 filtering), as block space is always available.
 
-This block size speed limit embeds centralized economic policy planning
+This block size speed limit embeds *centralized economic policy planning*
 choices for transactions fees into the bitcoin software.  That is bad
 news.  BIP 100 proposes a solution, by slowly migrating this centralized
 policy out to the free market at large.
 
-Consider three conflicting or opposing viewpoints, all of which are
-equally valid from their individual points-of-view as Rational Economic
+Consider three conflicting or opposing viewpoints, *all of which are
+equally valid* from their individual points-of-view as Rational Economic
 Actors:
-Early Adopter:   Do not increase 1MB speed limit.  I am happy to pay
-high fees to secure my bitcoin.  I make 1-2 transactions per year.
-Cautious Miner:  Only increase the 1MB speed limit a little.  Enough for
-adoption, not enough to reduce my fee income.
-Funded Startup:  Scale bitcoin to VISA rates in 12 months.  Keep fees
-near zero to subsidize adoption.  On-board 1 billion users in 2 years.
-No speed limit.
+* Early Adopter:   Do not increase 1MB speed limit.  I am happy to pay high fees to secure my bitcoin.  I make 1-2 transactions per year.
+* Cautious Miner:  Only increase the 1MB speed limit a little.  Enough for adoption, not enough to reduce my fee income.
+* Funded Startup:  Scale bitcoin to VISA rates in 12 months.  Keep fees near zero to subsidize adoption.  On-board 1 billion users in 2 years.  No speed limit.
 
 Should a Chief Scientist or Technical Advisory Board be making such a
 fundamentally economic, market-shaping choice?
