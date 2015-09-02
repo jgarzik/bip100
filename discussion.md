@@ -380,9 +380,9 @@ disadvantage one nation before another.**  Is an informal group of
 software developers best suited to choose?
 
 When the phrase “picking winners and losers” is used in the block size
-debate, that refers to picking an arbitrary block size - 1MB, 2MB, 20MB
-- which, in turn, dictates the shape, economics and actor behavior of
-  the bitcoin transaction fee market.  This advantages some in the
+debate, that refers to picking an arbitrary block size - 1MB, 2MB, 20MB -
+which, in turn, dictates the shape, economics and actor behavior of
+the bitcoin transaction fee market.  This advantages some in the
 bitcoin market and disadvantages others in the bitcoin market (or
 discourages actors from entering in the first place).  The bitcoin
 protocol’s 1MB limit - added an ancient times to prevent garbage from
@@ -412,9 +412,9 @@ opposite of a censorship resistant, egalitarian, neutral “backed by
 math” actor lauded by so many.
 
 There is no right answer for a speed limit which acts as a Magic Lever
-of Decentralization.  One level of decentralization for one market actor
-- versus a sought gain in bitcoin users and transaction volume - will be
-  different from another.  Software - and software developers - should
+of Decentralization.  One level of decentralization for one market actor -
+versus a sought gain in bitcoin users and transaction volume - will be
+different from another.  Software - and software developers - should
 not be taking that choice out of the hands of users.  Today, we make
 that choice for you, by virtue of the block size speed limit.
 
