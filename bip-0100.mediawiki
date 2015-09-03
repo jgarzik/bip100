@@ -17,7 +17,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 # Eliminate 1M limit as impediment to adoption.
 # Execute a hard fork network upgrade within safety rails, gathering data and experience for future upgrades.
 # Contain checks-and-balances that users must opt into, to enable system activation and growth.
-# Validated growth: a large majority is required to change the value.
+# Validated growth: a large majority (80%) is required to change the value.
 
 ==Specification==
 
@@ -26,10 +26,16 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 # Initial value of hardLimit is 1M, preserving current system.
 # Changing hardLimit is accomplished by encoding a proposed value within a block's coinbase scriptSig.
 ## Votes refer to a byte value, encoded within the pattern "/B\d+[M]{0,1}/"  Uppercase suffix 'M' applies a 1,000,000x multiplier.  Example:  /B8000000/ or /B8M/ votes for a 8,000,000-byte hardLimit.
-## Absent/invalid votes are counted as votes for the current hardLimit. Votes below minimum cap (1M) are counted as 1M votes.  Votes above the maximum cap (32M) are counted as 32M votes.
 ## A new hardLimit is calculated at each difficult adjustment period (2016 blocks), and applies to the next 2016 blocks.
-## Calculate hardLimit by examining the coinbase scriptSig votes of the previous 12,000 blocks, and taking the 20th percentile.
-## A new hardLimit may not increase or decrease by more than 1.2x beyond the prior hardLimit.
+## Calculation:
+### Absent/invalid votes are counted as votes for the current hardLimit. Out of range votes are counted as the nearest in-range value.
+### Votes are limited to +/- 20% of the current hardLimit.
+### Sort the votes from the previous 12,000 blocks from lowest to highest.
+### The raise value is defined as a vote for 2400th highest block (20th percentile).
+### The lower value is defined as a vote for 9600th highest block (80th percentile).
+### If the raise value is higher than current hardLimit, the new limit becomes the raise value.
+### If the lower value is lower than current hardLimit, the new limit becomes the lower value.
+### Otherwise, hardLimit is unchanged.
 # 75% rule: If 9,000 of the last 12,000 blocks are version 4 or greater, reject invalid version 4 blocks. (testnet4: 501 of last 1000)
 # 95% rule ("Point of no return"): If 11,400 of the last 12,000 blocks are version 4 or greater, reject all version <= 3 blocks. (testnet4: 750 of last 1000)
 # Block version number is calculated after masking out high 16 bits (final bit count TBD by versionBits outcome).
