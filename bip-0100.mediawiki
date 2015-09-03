@@ -26,7 +26,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 # Initial value of hardLimit is 1M, preserving current system.
 # Changing hardLimit is accomplished by encoding a proposed value within a block's coinbase scriptSig.
 ## Votes refer to a byte value, encoded within the pattern "/B\d+[M]{0,1}/"  Uppercase suffix 'M' applies a 1,000,000x multiplier.  Example:  /B8000000/ or /B8M/ votes for a 8,000,000-byte hardLimit.
-## A new hardLimit is calculated at each difficult adjustment period (2016 blocks), and applies to the next 2016 blocks.
+## A new hardLimit is calculated at each difficulty adjustment period (2016 blocks), and applies to the next 2016 blocks.
 ## Calculation:
 ### Absent/invalid votes are counted as votes for the current hardLimit. Out of range votes are counted as the nearest in-range value.
 ### Votes are limited to +/- 20% of the current hardLimit.
