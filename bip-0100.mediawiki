@@ -13,7 +13,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 
 ==Motivation==
 
-# Wean the bitcoin protocol away from any block size limit (long term; this BIP does not fully accomplish that goal).  Transition the block size hard limit away from a static constant, towards a system more responsive to the free market.
+# Long term, wean the bitcoin protocol away from any block size limit; let the free market establish a natural size limit equilibrium.
 # Eliminate 1M limit as impediment to adoption.
 # Execute a hard fork network upgrade within safety rails, gathering data and experience for future upgrades.
 # Contain checks-and-balances that users must opt into, to enable system activation and growth.
