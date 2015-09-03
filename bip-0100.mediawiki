@@ -1,0 +1,40 @@
+<pre>
+  BIP: 100
+  Title: Block v4, floating block size hard limit
+  Author: Jeff Garzik <jgarzik@gmail.com>
+  Status: Draft
+  Type: Standards Track
+  Created: 2015-06-11
+</pre>
+
+==Abstract==
+
+Replace static 1M block size hard limit with a hard limit that floats between 1M and 32M.
+
+==Motivation==
+
+# Wean the bitcoin protocol away from any block size limit (long term; this BIP does not fully accomplish that goal).  Transition the block size hard limit away from a static constant, towards a system more responsive to the free market.
+# Eliminate 1M limit as impediment to adoption.
+# Execute a hard fork network upgrade within safety rails, gathering data and experience for future upgrades.
+# Contain checks-and-balances that users must opt into, to enable system activation and growth.
+# Validated growth: a large majority is required to change the value.
+
+==Specification==
+
+# Replace static 1M block size hard limit with a floating limit ("hardLimit").
+# hardLimit floats within the range 1-32M, inclusive.
+# Initial value of hardLimit is 1M, preserving current system.
+# Changing hardLimit is accomplished by encoding a proposed value within a block's coinbase scriptSig.
+## Votes refer to a byte value, encoded within the pattern "/BV\d+/"  Example:  /BV8000000/ votes for 8,000,000 byte hardLimit.
+## Absent/invalid votes and votes below minimum cap (1M) are counted as 1M votes.  Votes above the maximum cap (32M) are counted as 32M votes.
+## A new hardLimit is calculated at each difficult adjustment period (2016 blocks), and applies to the next 2016 blocks.
+## Calculate hardLimit by examining the coinbase scriptSig votes of the previous 12,000 blocks, and taking the 20th percentile.
+## A new hardLimit may not increase or decrease by more than 1.2x beyond the prior hardLimit.
+# 75% rule: If 9,000 of the last 12,000 blocks are version 4 or greater, reject invalid version 4 blocks. (testnet4: 501 of last 1000)
+# 95% rule ("Point of no return"): If 11,400 of the last 12,000 blocks are version 4 or greater, reject all version <= 3 blocks. (testnet4: 750 of last 1000)
+# Block version number is calculated after masking out high 16 bits (final bit count TBD by versionBits outcome).
+
+==Backward compatibility==
+
+All older clients are not compatible with this change. The first block larger than 1M will create a network partition excluding not-upgraded network nodes and miners.
+
