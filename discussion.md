@@ -1,6 +1,6 @@
 # Making Decentralized Economic Policy
 
-BIP 100 - Theory and Discussion, v0.8.1 - draft
+BIP 100 - Theory and Discussion
 
 Jeff Garzik &lt;jgarzik@gmail.com&gt;
 
