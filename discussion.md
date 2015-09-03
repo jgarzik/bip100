@@ -230,15 +230,13 @@ Protocol changes proposed:
 1. Hard fork, to
 2. Remove static 1MB block size limit.
 3. Simultaneously, add a new floating block size limit, set to 1MB.
-4. The historical 32MB limit remains.
-5. Schedule the hard fork on testnet for September 1, 2015.
-6. Schedule the hard fork on bitcoin main chain for January 11, 2016.
-7. Changing the 1MB limit is accomplished in a manner similar to BIP 34, a one-way lock-in upgrade with a 12,000 block (3 month) threshold by 90% of the blocks.
-8. Limit increase or decrease may not exceed 2x in any one step.
-9. Limit may not decrease below 1MB.
-10. Miners vote by encoding ‘B’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/B8000000/” or "/B8M/" to vote for 8M. An 80% consensus is required to change the block size.
-11. In the case of a block size increase, the 20th percentile vote is the new block size limit.
-12. In the case of a block size decrease, the 80th percentile vote is the new block size limit.
+4. Changing the 1MB limit is accomplished in a manner similar to BIP 34, a one-way lock-in upgrade with a 12,000 block (3 month) threshold by 90% of the blocks.
+5. Limit is recalculated at each difficulty adjustment period (2016 blocks).
+6. Limit increase or decrease may not exceed +/- 20% in any one adjustment.
+7. Limit may not decrease below 1MB, nor exceed 32MB.
+8. Miners vote by encoding ‘B’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/B8000000/” or "/B8M/" to vote for 8M. An 80% consensus is required to change the block size.
+9. In the case of a block size increase, the 20th percentile vote is the new block size limit.
+10. In the case of a block size decrease, the 80th percentile vote is the new block size limit.
 
 This creates a framework whereby the network may increase the block size
 by consensus, a lower and less politically risky hurdle than hard fork.
