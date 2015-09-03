@@ -36,6 +36,9 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 ### If the raise value is higher than current hardLimit, the new limit becomes the raise value.
 ### If the lower value is lower than current hardLimit, the new limit becomes the lower value.
 ### Otherwise, hardLimit is unchanged.
+
+==Deployment==
+
 # 75% rule: If 9,000 of the last 12,000 blocks are version 4 or greater, reject invalid version 4 blocks. (testnet4: 501 of last 1000)
 # 95% rule ("Point of no return"): If 11,400 of the last 12,000 blocks are version 4 or greater, reject all version <= 3 blocks. (testnet4: 750 of last 1000)
 # Block version number is calculated after masking out high 16 bits (final bit count TBD by versionBits outcome).
