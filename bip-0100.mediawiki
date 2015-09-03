@@ -1,6 +1,6 @@
 <pre>
   BIP: 100
-  Title: Block v4, floating block size hard limit
+  Title: Floating block size hard limit
   Author: Jeff Garzik <jgarzik@gmail.com>
   Status: Draft
   Type: Standards Track
