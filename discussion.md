@@ -264,9 +264,30 @@ system where the market decides the best block size.
 
 Users - network node operators - exercise their voice twice:  One hard
 fork at the introduction of BIP 100, and a 2nd hard fork at 32MB,
-assuming users choose to scale that high.  The 32MB hard fork is largely
-coincidental - a whole-network upgrade at 32MB was likely needed anyway,
-for historical reasons unrelated to this proposal.
+assuming users choose to scale that high.
+
+### Block minimum and maximum rationale
+
+The 1M minimum is established as a safety rail on the low end.
+Conservatively, the low end will behave no worse than the current system
+with the static 1M hard limit.  This also addresses edge cases at the
+low end that worried some, like a user squeeze.
+
+The 32M maximum is intended to be temporary.  It is established as a
+safety rail on the high end.  A 2nd hard fork adds an additional user
+check-and-balance, ensuring that the userbase agrees with continued
+system bandwidth growth.  This addresses the worries of some that the
+system will run away on the high end, squeezing out all but a few.
+
+The long term goal is to remove the 32M maximum, and let the system
+reach a natural equilbrium discovered by the free market.  This BIP
+accomplishes a first step, a limited float, enabling field experience,
+within safety limits.
+
+Beyond the technical, these limits are a compromise, designed to raise
+the comfort level of various parties.  These numbers are somewhat
+arbitrary within a certain low and high range, and were chosen to
+(hopefully) have the widest support among the community.
 
 ## Discussion: Low signal, high noise
 
