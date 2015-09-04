@@ -236,7 +236,7 @@ Protocol changes proposed:
 7. Limit may not decrease below 1MB, nor exceed 32MB.
 8. Miners vote by encoding ‘B’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/B8000000/” or "/B8M/" to vote for 8M. An 80% consensus is required to change the block size.
 9. In the case of a block size increase, the 20th percentile vote is the new block size limit.
-10. In the case of a block size decrease, the 80th percentile vote is the new block size limit.
+10. In the case of a block size decrease, the median (50th percentile) vote is the new block size limit.
 
 This creates a framework whereby the network may increase the block size
 by consensus, a lower and less politically risky hurdle than hard fork.
@@ -256,6 +256,7 @@ This BIP accomplishes several goals:
 * Get hard fork risk out of the way early.
 * KISS solution, in terms of code changes.
 * Upgrade path, yet constrained until problem & solution better understood.
+* Stability: avoids creating an incentive for proponents of a block size decrease at some point in the future to force a soft fork abandoning BIP100 by permitting a simply majority of miners to always force a reduction in block size
 
 This introduces friction into the block size increase process - making
 it changeable, yet giving participants in the system sufficient time to
