@@ -17,7 +17,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 # Eliminate 1M limit as impediment to adoption.
 # Execute a hard fork network upgrade within safety rails, gathering data and experience for future upgrades.
 # Contain checks-and-balances that users must opt into, to enable system activation and growth.
-# Validated growth: a large majority (80%) is required to change the value.
+# Validated growth: a large majority (80%) is required to increase the block size.
 
 ==Specification==
 
@@ -32,7 +32,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 ### Votes are limited to +/- 20% of the current hardLimit.
 ### Sort the votes from the previous 12,000 blocks from lowest to highest.
 ### The raise value is defined as a vote for 2400th highest block (20th percentile).
-### The lower value is defined as a vote for 9600th highest block (80th percentile).
+### The lower value is defined as a vote for 4800th highest block (40th percentile).
 ### If the raise value is higher than current hardLimit, the new limit becomes the raise value.
 ### If the lower value is lower than current hardLimit, the new limit becomes the lower value.
 ### Otherwise, hardLimit is unchanged.
