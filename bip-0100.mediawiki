@@ -30,9 +30,9 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 ## Calculation:
 ### Absent/invalid votes are counted as votes for the current hardLimit. Out of range votes are counted as the nearest in-range value.
 ### Votes are limited to +/- 20% of the current hardLimit.
-### Sort the votes from the previous 12,000 blocks from lowest to highest.
-### The raise value is defined as a vote for 2400th highest block (20th percentile).
-### The lower value is defined as a vote for 9600th highest block (80th percentile).
+### Sort the votes from the previous 12,096 blocks from lowest to highest.
+### The raise value is defined as the 2420th lowest vote (20th percentile).
+### The lower value is defined as the 9677th lowest (=2420th highest) vote (80th percentile).
 ### If the raise value is higher than current hardLimit, the new limit becomes the raise value.
 ### If the lower value is lower than current hardLimit, the new limit becomes the lower value.
 ### Otherwise, hardLimit is unchanged.
