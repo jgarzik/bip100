@@ -233,7 +233,7 @@ Protocol changes proposed:
 4. Changing the 1MB limit is accomplished in a manner similar to BIP 34, a one-way lock-in upgrade with a 12,000 block (3 month) threshold by 90% of the blocks.
 5. Limit is recalculated at each difficulty adjustment period (2016 blocks).
 6. Limit increase or decrease may not exceed +/- 20% in any one adjustment.
-7. Limit may not decrease below 1MB, nor exceed 32MB.
+7. Limit may not decrease below 1MB, nor exceed 8GB.
 8. Miners vote by encoding ‘B’+BlockSizeRequestValue into coinbase scriptSig, e.g. “/B8000000/” or "/B8M/" to vote for 8M. An 80% consensus is required to change the block size.
 9. In the case of a block size increase, the 20th percentile vote is the new block size limit.
 10. In the case of a block size decrease, the 80th percentile vote is the new block size limit.
@@ -263,7 +263,7 @@ observe system behavior and change course.  Ultimately moving towards a
 system where the market decides the best block size.
 
 Users - network node operators - exercise their voice twice:  One hard
-fork at the introduction of BIP 100, and a 2nd hard fork at 32MB,
+fork at the introduction of BIP 100, and a 2nd hard fork at 8GB,
 assuming users choose to scale that high.
 
 ### Block minimum and maximum rationale
@@ -273,13 +273,13 @@ Conservatively, the low end will behave no worse than the current system
 with the static 1M hard limit.  This also addresses edge cases at the
 low end that worried some, like a user squeeze.
 
-The 32M maximum is intended to be temporary.  It is established as a
+The 8G maximum is intended to be temporary.  It is established as a
 safety rail on the high end.  A 2nd hard fork adds an additional user
 check-and-balance, ensuring that the userbase agrees with continued
 system bandwidth growth.  This addresses the worries of some that the
 system will run away on the high end, squeezing out all but a few.
 
-The long term goal is to remove the 32M maximum, and let the system
+The long term goal is to remove the 8G maximum, and let the system
 reach a natural equilbrium discovered by the free market.  This BIP
 accomplishes a first step, a limited float, enabling field experience,
 within safety limits.

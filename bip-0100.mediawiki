@@ -9,7 +9,7 @@
 
 ==Abstract==
 
-Replace static 1M block size hard limit with a hard limit that floats between 1M and 32M.
+Replace static 1M block size hard limit with a hard limit that floats between 1M and 8G.
 
 ==Motivation==
 
@@ -22,7 +22,7 @@ Replace static 1M block size hard limit with a hard limit that floats between 1M
 ==Specification==
 
 # Replace static 1M block size hard limit with a floating limit ("hardLimit").
-# hardLimit floats within the range 1-32M, inclusive.
+# hardLimit floats within the range 1M-8G, inclusive.
 # Initial value of hardLimit is 1M, preserving current system.
 # Changing hardLimit is accomplished by encoding a proposed value within a block's coinbase scriptSig.
 ## Votes refer to a byte value, encoded within the pattern "/B\d+[M]{0,1}/"  Uppercase suffix 'M' applies a 1,000,000x multiplier.  Example:  /B8000000/ or /B8M/ votes for a 8,000,000-byte hardLimit.
