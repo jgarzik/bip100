@@ -47,7 +47,7 @@ The system is compatible with emergent consensus, but whereas under that system 
 ### Otherwise, <code>new hardLimit</code> remains the same as <code>current hardLimit</code>.
 
 ===Signature Hashing Operations Limits===
-# The per-block signature hashing operations limit is scaled to (<code>hardLimit</code> rounded up to nearest megabyte)/50.
+# The per-block signature hashing operations limit is scaled to (actual block size rounded up to nearest megabyte)/50.
 # A maximum serialized transaction size of 1000000 bytes is imposed.
 
 ===Publication of <code>hardLimit</code>===
