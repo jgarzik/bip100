@@ -27,14 +27,14 @@ The system is compatible with emergent consensus, but whereas under that system 
 # Initial value of <code>hardLimit</code> is 1000000 bytes, preserving current system.
 # Changing <code>hardLimit</code> is accomplished by encoding a proposed value, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
-### A vote is represented as a positive megabyte value using the BIP100 pattern<br /><br /><code>/BIP100/B[0-9]+/</code><br /><br />Example: <code>/BIP100/B8/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />
+### A vote is represented as a megabyte value using the BIP100 pattern<br /><br /><code>/BIP100/B[0-9]+/</code><br /><br />Example: <code>/BIP100/B8/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />
 ### If the block height is encoded at the start of the coinbase scriptSig, as per BIP34, it is ignored.
 ### Only the first BIP100 pattern match is processed in "Maximum block size recalculation" below.
-### A valid megabyte value is represented by consecutive base-ten digits.
+### A megabyte value is represented by consecutive base-ten digits.
 ### If no BIP100 pattern is matched, the first matching emergent consensus pattern <code>/EB[0-9]+/</code>, if any, is accepted as the megabyte vote.<br /><br />
 ## Maximum block size recalculation
 ### A <code>new hardLimit</code> is calculated after each difficulty adjustment period of 2016 blocks, and applies to the next 2016 blocks.
-### Absent/invalid votes are counted as votes for the <code>current hardLimit</code>.
+### Absent/zero-valued votes are counted as votes for the <code>current hardLimit</code>.
 ### The votes of the previous 2016 blocks are sorted by megabyte vote.
 ### Raising <code>hardLimit</code><br /><br />
 #### The <code>raise value</code> is defined as the vote of the 1512th highest block, converted to bytes.
