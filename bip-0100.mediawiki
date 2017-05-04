@@ -1,5 +1,6 @@
 <pre>
   BIP: 100
+  Layer: Consensus (hard fork)
   Title: Dynamic maximum block size by miner vote
   Author: Jeff Garzik <jgarzik@gmail.com>
           Tom Harding <tomh@thinlink.com>
@@ -7,6 +8,7 @@
   Status: Draft
   Type: Standards Track
   Created: 2015-06-11
+  License: BSD-2-Clause
 </pre>
 
 ==Abstract==
@@ -60,4 +62,10 @@ This BIP is presumed deployed and activated as of block height 449568 by impleme
 ==Backward compatibility==
 
 The first block larger than 1M will create a network partition, as nodes with a fixed 1M hard limit reject that block.
+
+==Reference Implementation==
+https://github.com/bitcoinxt/bitcoinxt/pull/188
+
+==Copyright==
+This document is licensed under the BSD 2-clause license.
 
